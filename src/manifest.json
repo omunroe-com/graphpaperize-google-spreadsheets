@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Graphpaperize",
+  "version": "0.0.1",
+  "description": "Convert a selected sheet to Graph paper",
+  "icons": {
+    "128": "icons/128x128-icon.png"
+  },
+  "container": [
+    "DOMAIN_INSTALLABLE"
+  ],
+  "api_console_project_id": "870743465235",
+  "app" : {
+    "launch" : {
+      "web_url" : "https://toishi-tech.github.io"
+    }
+  }
+}
