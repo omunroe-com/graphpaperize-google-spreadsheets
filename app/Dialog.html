@@ -1,0 +1,18 @@
+<!-- Use a templated HTML printing scriptlet to import common stylesheet. -->
+<?!= HtmlService.createHtmlOutputFromFile('Dialog.css').getContent(); ?>
+
+<!-- Below is the HTML code that defines the dialog element structure. -->
+<div>
+    <p>Convert selected a spreadsheet to Graph paper.</p>
+    <div class="block">
+        Column width: <input id="dialog-input-width" type="number" value="20">
+    </div>
+    <div class="block" id="dialog-button-bar">
+        <button class="action" id="dialog-execute-button">Execute</button>
+        <button id="dialog-cancel-button">Cancel</button>
+    </div>
+    <div id="dialog-status"></div>
+</div>
+
+<!-- Use a templated HTML printing scriptlet to import JavaScript. -->
+<?!= HtmlService.createHtmlOutputFromFile('Dialog.js').getContent(); ?>

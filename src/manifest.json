@@ -10,9 +10,11 @@
     "DOMAIN_INSTALLABLE"
   ],
   "api_console_project_id": "870743465235",
-  "app" : {
-    "launch" : {
-      "web_url" : "https://toishi-tech.github.io"
+  "app": {
+    "background": {
+      "scripts": [
+        "background.js"
+      ]
     }
   }
 }
