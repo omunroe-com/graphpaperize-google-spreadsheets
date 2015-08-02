@@ -3,7 +3,9 @@
 
   $(function() {
     $('#dialog-execute-button').on('click', onExecuteClick);
-    $('#dialog-cancel-button').on('click', google.script.host.close);
+    $('#dialog-cancel-button').on('click', function() {
+      google.script.host.close();
+    });
   });
 
   /**
@@ -15,6 +17,7 @@
   function onExecuteClick() {
     this.disabled = true;
     var inputWidth = $('#dialog-input-width').val();
+    var inputHeight = $('#dialog-input-height').val();
     showStatus('Working...');
     google.script.run
         .withSuccessHandler(
@@ -30,7 +33,7 @@
           }
         )
         .withUserObject(this)
-        .doGraphpaperize(inputWidth);
+        .doGraphpaperize(inputWidth, inputHeight);
   }
 
   /**

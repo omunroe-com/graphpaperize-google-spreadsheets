@@ -4,6 +4,7 @@
 
 var DIALOG_TITLE = 'Graphpaperize Dialog';
 var DEFAULT_WIDTH = 20;
+var DEFAULT_HEIGHT = 20;
 
 /**
  * Adds a custom menu with items to show the sidebar and dialog.
@@ -44,12 +45,17 @@ function showDialog() {
  *
  * @param {String} action An identifier for the action to take.
  */
-function doGraphpaperize(width) {
+function doGraphpaperize(width, height) {
   var sheets = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = sheets.getActiveSheet();
-  var cellNum = sheet.getMaxColumns();
   var columnWidth = !width ? DEFAULT_WIDTH : width;
-  for (var i = 1; i <= cellNum; i++) {
+  var columnHeight = !height ? DEFAULT_HEIGHT : height;
+  var columnNum = sheet.getMaxColumns();
+  for (var i = 1; i <= columnNum; i++) {
     sheet.setColumnWidth(i, columnWidth);
+  }
+  var rowNum = sheet.getMaxRows();
+  for (var i = 1; i <= rowNum; i++) {
+    sheet.setRowHeight(i, columnHeight);
   }
 }
